@@ -1,0 +1,7 @@
+# defaults file for cacti-client
+---
+cacti_client_user: cacti
+cacti_client_group: cacti
+cacti_client_groups: []
+
+cacti_client_authorized_keys: []
