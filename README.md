@@ -29,9 +29,9 @@ None
 - hosts: all
   roles:
     - cacti-client
-    vars:
-      cacti_client_authorized_keys:
-        - src: ../../../files/cacti-client/etc/cacti/id_rsa.pub
+  vars:
+    cacti_client_authorized_keys:
+      - src: ../../../files/cacti-client/etc/cacti/id_rsa.pub
 ```
 
 #### License
