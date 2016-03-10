@@ -5,7 +5,7 @@ galaxy_info:
   company: Oefenweb.nl B.V.
   description: Set up a machine (client) so it can be monitored by cacti (server)
   license: MIT
-  min_ansible_version: 1.4
+  min_ansible_version: 1.6
   platforms:
     - name: Ubuntu
       versions:
