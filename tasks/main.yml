@@ -4,8 +4,8 @@
   group:
     name: "{{ item }}"
   with_flattened:
-    - cacti_client_group
-    - cacti_client_groups
+    - "{{ cacti_client_group }}"
+    - "{{ cacti_client_groups }}"
   tags:
     - configuration
     - cacti-client
@@ -26,7 +26,7 @@
     user: "{{ cacti_client_user }}"
     key: "{{ lookup('file', item.src) }}"
     state: "{{ item.state | default('present') }}"
-  with_items: cacti_client_authorized_keys
+  with_items: "{{ cacti_client_authorized_keys }}"
   tags:
     - configuration
     - cacti-client
