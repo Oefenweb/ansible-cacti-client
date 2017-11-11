@@ -3,6 +3,7 @@
 - name: add group
   group:
     name: "{{ item }}"
+    system: true
   with_flattened:
     - "{{ cacti_client_group }}"
     - "{{ cacti_client_groups }}"
@@ -14,6 +15,7 @@
 - name: add user
   user:
     name: "{{ cacti_client_user }}"
+    system: true
     group: "{{ cacti_client_group }}"
     groups: "{{ cacti_client_groups | join(',') }}"
   tags:
