@@ -1,6 +1,6 @@
 ## cacti-client
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-cacti-client.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-cacti-client) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-cacti--client-blue.svg)](https://galaxy.ansible.com/list#/roles/5697)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-cacti-client.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-cacti-client) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-cacti--client-blue.svg)](https://galaxy.ansible.com/Oefenweb/cacti-client)
 
 Set up a machine (client) so it can be monitored by cacti (server).
 
