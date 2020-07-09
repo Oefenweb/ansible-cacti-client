@@ -1,0 +1,16 @@
+# pre test file for cacti-client
+---
+- name: pre | install dependencies
+  apt:
+    name:
+      - openssh-client
+    state: "{{ apt_install_state | default('latest') }}"
+    cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
+
+- name: pre | generate ssh key
+  command: >
+    ssh-keygen -t rsa -b 2048 -C '' -P '' -f {{ playbook_dir }}/../files/id_rsa -q
+  args:
+    creates: "{{ playbook_dir }}/../files/id_rsa"
+  connection: local
+  become: false

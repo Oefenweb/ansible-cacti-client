@@ -3,8 +3,9 @@
 - hosts: localhost
   connection: local
   become: true
+  pre_tasks:
+    - name: include vars
+      include_vars: main.yml
+    - include: pre.yml
   roles:
     - ../../
-  vars:
-    cacti_client_authorized_keys:
-      - src: id_rsa.pub
