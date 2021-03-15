@@ -1,4 +1,4 @@
-# tasks file for cacti-client
+# tasks file
 ---
 - name: add group
   group:

@@ -1,4 +1,4 @@
-# vars file for cacti-client
+# vars file
 ---
 cacti_client_authorized_keys:
   - src: "{{ playbook_dir }}/../files/id_rsa.pub"

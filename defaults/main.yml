@@ -1,4 +1,4 @@
-# defaults file for cacti-client
+# defaults file
 ---
 cacti_client_user: cacti
 cacti_client_group: cacti
