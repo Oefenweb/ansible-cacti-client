@@ -1,19 +1,17 @@
 # tasks file
 ---
 - name: add group
-  group:
+  ansible.builtin.group:
     name: "{{ item }}"
     system: true
-  with_flattened:
-    - "{{ cacti_client_group }}"
-    - "{{ cacti_client_groups }}"
+  with_items: "{{ [cacti_client_group] + cacti_client_groups }}"
   tags:
     - configuration
     - cacti-client
     - cacti-client-add-group
 
 - name: add user
-  user:
+  ansible.builtin.user:
     name: "{{ cacti_client_user }}"
     system: true
     group: "{{ cacti_client_group }}"
@@ -24,7 +22,7 @@
     - cacti-client-add-user
 
 - name: create authorized_keys from public key
-  authorized_key:
+  ansible.posix.authorized_key:
     user: "{{ cacti_client_user }}"
     key: "{{ lookup('file', item.src) }}"
     state: "{{ item.state | default('present') }}"
