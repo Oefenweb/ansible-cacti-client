@@ -4,9 +4,7 @@
   ansible.builtin.group:
     name: "{{ item }}"
     system: true
-  with_flattened:
-    - "{{ cacti_client_group }}"
-    - "{{ cacti_client_groups }}"
+  with_items: "{{ [cacti_client_group] + cacti_client_groups }}"
   tags:
     - configuration
     - cacti-client
