@@ -1,6 +1,6 @@
 # pre test file
 ---
-- name: install dependencies
+- name: pre | install dependencies
   ansible.builtin.apt:
     name:
       - openssh-client
@@ -8,7 +8,7 @@
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
 
-- name: generate key pair
+- name: pre | generate key pair
   ansible.builtin.command: >
     ssh-keygen -t rsa -b 2048 -C '' -P '' -f {{ cacti_client_private_key_file }} -q
   args:
